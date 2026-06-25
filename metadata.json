@@ -1,0 +1,6 @@
+{
+  "name": "Heritage Hub",
+  "description": "Graduation presentation portal for Heritage Hub — a bilingual mobile platform for exploring Egyptian cultural heritage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

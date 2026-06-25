@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Caslon Text", Georgia, serif;
+}
+
+/* Custom Keyframe Animations for high-fidelity museum-digital experience */
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceScroll {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+/* Animation Utility Classes */
+
+.animate-kenburns {
+  animation: kenburns 24s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bounceScroll {
+  animation: bounceScroll 2s infinite ease-in-out;
+}
+
+/* Respect user prefers-reduced-motion standard */
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns,
+  .animate-fadeIn,
+  .animate-slideUp,
+  .animate-bounceScroll {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* General Layout Tweaks */
+html {
+  scroll-behavior: smooth;
+  background-color: #fcf9f8;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fcf9f8;
+  color: #1b1c1c;
+}
+
+/* Elegant scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f6f3f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5D9B6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
